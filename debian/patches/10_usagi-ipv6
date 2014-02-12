@@ -304,7 +304,7 @@
 +	@make REAL_DAEMON_DIR=$(REAL_DAEMON_DIR) STYLE=$(STYLE) \
 +	LIBS=-lnsl RANLIB=ranlib ARFLAGS=rv AUX_OBJ= \
 +	NETGROUP=-DNETGROUP TLI= VSYSLOG= BUGS= \
-+	EXTRA_CFLAGS="-DSYS_ERRLIST_DEFINED -DHAVE_STRERROR" all
++	EXTRA_CFLAGS="-DSYS_ERRLIST_DEFINED -DHAVE_STRERROR -DINET6=1" all
  
  # This is good for many SYSV+BSD hybrids with NIS, probably also for HP-UX 7.x.
  hpux hpux8 hpux9 hpux10:

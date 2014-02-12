@@ -63,7 +63,7 @@ TABLES		= -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.al
 low\"
 KILL_OPT	= -DKILL_IP_OPTIONS
 
-EXTRA_CFLAGS="-DSYS_ERRLIST_DEFINED -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT -DINET6=1 -Dss_family=__ss_family -Dss_len=__ss_len"
+EXTRA_CFLAGS="-DSYS_ERRLIST_DEFINED -DHAVE_STRERROR -DHAVE_WEAKSYMS -DINET6=1 -Dss_family=__ss_family -Dss_len=__ss_len"
 
 The options ALWAYS_RFC931, ALWAYS_HOSTNAME and PARANOID have not been
 enabled because these features can be enabled at runtime. The option

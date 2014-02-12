@@ -1,29 +1,3 @@
-Description: Upstream changes introduced in version 7.6.q-19
- This patch has been created by dpkg-source during the package build.
- Here's the last changelog entry, hopefully it gives details on why
- those changes were made:
- .
- tcp-wrappers (7.6.q-19) unstable; urgency=low
- .
-   * Made piuparts happy by removing /etc/hosts.{allow,deny} on purge, even
-     if the package is never purged on real systems.
- .
- The person named in the Author field signed this changelog entry.
-Author: Marco d'Itri <md@linux.it>
-
----
-The information above should follow the Patch Tagging Guidelines, please
-checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
-are templates for supplementary fields that you might want to add:
-
-Origin: <vendor|upstream|other>, <url of original patch>
-Bug: <url in upstream bugtracker>
-Bug-Debian: http://bugs.debian.org/<bugnumber>
-Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
-Forwarded: <no|not-needed|url proving that it has been forwarded>
-Reviewed-By: <name and email of someone who approved the patch>
-Last-Update: <YYYY-MM-DD>
-
 --- /dev/null
 +++ tcp-wrappers-7.6.q/try-from.8
 @@ -0,0 +1,28 @@
@@ -46,7 +20,7 @@ Last-Update: <YYYY-MM-DD>
 +
 +Example:
 +
-+rsh host /some/where/try\-from
++rsh host /usr/sbin/try\-from
 +
 +.SH SEE ALSO
 +.BR hosts_access (5),

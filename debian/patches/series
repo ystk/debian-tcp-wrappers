@@ -26,3 +26,6 @@ siglongjmp
 size_t
 tcpdchk_libwrapped
 fix_static
+fix_parsing_long_lines
+initgroups
+ignore_missing_inetdconf

@@ -1,3 +1,53 @@
+tcp-wrappers (7.6.q-24) unstable; urgency=low
+
+  * Do not remove /etc/hosts.{allow,deny} on purge of libwrap0 if it is
+    installed for multiple architectures. (Closes: #682425)
+    Patch courtesy of Jonathan Nieder.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 30 Jul 2012 03:37:41 +0200
+
+tcp-wrappers (7.6.q-23) unstable; urgency=medium
+
+  * Correctly install libwrap.{a,so} in the multiarch directory.
+    (Closes: #658765)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 19 Feb 2012 01:42:27 +0100
+
+tcp-wrappers (7.6.q-22) unstable; urgency=medium
+
+  * Added patch ignore_missing_inetdconf: stop tcpdmatch and tcpdchk
+    from aborting if /etc/inetd.conf does not exist. (Closes: #650826)
+  * Enabled hardening with dpkg-buildflags, and this time for real.
+  * libwrap0-dev marked "Multi-Arch: same".
+  * Added patch initgroups: properly set supplementary group IDs, taken
+    from the Red Hat package.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 05 Dec 2011 05:56:54 +0100
+
+tcp-wrappers (7.6.q-21) unstable; urgency=medium
+
+  * Added the proper Breaks/Replaces directives to deal with the man pages
+    moved in 7.6.q-20. (Closes: #631252, #631311)
+  * Enabled IPv6 support for the Hurd build. (Closes: #631247)
+  * Enabled hardening with hardening-includes.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 24 Jun 2011 00:21:44 +0200
+
+tcp-wrappers (7.6.q-20) unstable; urgency=low
+
+  * Added patch fix_parsing_long_lines: fixes the /etc/hosts.{allow,deny}
+    parser to properly detect lines longer than 2047 characters which
+    would cause the caller to hang forever in a loop. (Closes: #596261)
+  * Fixed the link ordering of the shared library, patch courtesy of
+    Matthias Klose of Ubuntu. (Closes: #609598)
+  * Moved the *.5 man pages from tcpd to libwrap0. (Closes: #630244)
+  * Converted to multiarch the libwrap0 and tcpd packages.
+  * Switched to debhelper level 8.
+  * Hopefully added proper support for overriding CFLAGS and LDFLAGS.
+  * Removed the -D_REENTRANT flag which has been useless since libc6.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 21 Jun 2011 23:51:38 +0200
+
 tcp-wrappers (7.6.q-19) unstable; urgency=low
 
   * Made piuparts happy by removing /etc/hosts.{allow,deny} on purge, even
